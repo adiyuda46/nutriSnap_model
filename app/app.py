@@ -13,8 +13,14 @@ app = Flask(__name__)
 
 
 #n get file model & lebel class
-MODEL_PATH  = "my_model_2.keras"
-LABELS_PATH = "class_names.txt"
+#MODEL_PATH  = "my_model_2.keras"
+#LABELS_PATH = "class_names.txt"
+
+# Dapatkan path folder saat ini (tempat app.py berada)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+MODEL_PATH  = os.path.join(BASE_DIR, "my_model_2.keras")
+LABELS_PATH = os.path.join(BASE_DIR, "class_names.txt")
 
 # Load model
 if not os.path.isfile(MODEL_PATH):
